@@ -1,6 +1,6 @@
 # 🚀 **BiblioFusion** - Fusão Bibliográfica Inteligente
 
-![BiblioFusion](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![BiblioFusion](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 
 ## 📖 Sobre o Projeto
 
@@ -241,10 +241,6 @@ python bibliofusion.py --min-year 2015 --max-year 2024
 - Novos formatos de exportação
 - Processamento em lote
 - Interface gráfica
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 🏆 Citação
 
