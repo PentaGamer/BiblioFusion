@@ -1,209 +1,260 @@
-# 📚 Processamento de Bases Bibliométricas para VOSviewer
+# 🚀 **BiblioFusion** - Fusão Bibliográfica Inteligente
 
-Este projeto fornece uma solução automatizada para mesclar e preparar bases de dados bibliográficas da Web of Science e Scopus para uso no software VOSviewer.
+![BiblioFusion](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## 🎯 Objetivo
+## 📖 Sobre o Projeto
 
-Mesclar arquivos exportados da Web of Science e Scopus em uma única base de dados formatada corretamente para análise bibliométrica no VOSviewer, resolvendo problemas comuns de formatação de datas e duplicatas.
+**BiblioFusion** é uma solução inteligente e automatizada para mesclar e preparar bases de dados bibliográficas da Web of Science e Scopus, otimizada para análise no VOSviewer. Transforma o caos de múltiplas bases em dados harmonizados e prontos para análise bibliométrica.
 
-## 📋 Pré-requisitos
+> *"Unindo bases, construindo conhecimento"*
 
-### Software Necessário
-- **Python 3.8 ou superior**
-- **Pandas** (biblioteca Python)
-- **VOSviewer** (para análise final)
+## ✨ Características Principais
 
-### Arquivos de Entrada
-- `wos_data.txt` - Exportado da Web of Science (formato Tab-delimited)
-- `scopus_data.csv` - Exportado da Scopus (formato CSV)
+### 🔄 **Processamento Inteligente**
+- ✅ Mesclagem automática Web of Science + Scopus
+- ✅ Remoção inteligente de duplicatas
+- ✅ Correção automática de formatos de data
+- ✅ Padronização de campos para VOSviewer
 
-## 🛠️ Instalação
+### 🛡️ **Resolução de Problemas Comuns**
+- 🎯 **Datas decimais:** Converte `2024.6` → `2024`
+- 🔧 **Encoding:** Suporte completo a caracteres especiais
+- 📊 **Valores missing:** Tratamento automático
+- 🔍 **Formato inconsistente:** Padronização inteligente
 
-### 1. Instalar Python
-**Windows/Mac:**
-- Baixe em: https://www.python.org/downloads/
-- **Importante:** Marque "Add Python to PATH" durante a instalação
+### 📈 **Saída Otimizada**
+- 🎯 Compatibilidade total com VOSviewer
+- 📊 Relatórios detalhados de processamento
+- 🔄 Preservação de metadados originais
+- 🏷️ Identificação da fonte dos dados
 
-**Linux:**
+## 🎯 Quick Start
+
+### 1. **Instalação Rápida**
 ```bash
-sudo apt update
-sudo apt install python3 python3-pip
-```
+# Clone o repositório
+git clone https://github.com/seu-usuario/bibliofusion.git
+cd bibliofusion
 
-### 2. Instalar Pandas
-Abra o Prompt de Comando/Terminal e execute:
-```bash
+# Instale as dependências
 pip install pandas
 ```
 
-### 3. Verificar Instalação
+### 2. **Uso Básico**
 ```bash
-python --version
-pip show pandas
-```
-
-## 📁 Estrutura de Arquivos
-
-```
-pasta_do_projeto/
-├── bibliofusion.py          # Script principal
-├── wos_data.txt             # Exportado da Web of Science
-├── scopus_data.csv          # Exportado da Scopus
-├── base_bibliometrica_apenas_ano.csv  # Arquivo final (gerado)
-└── README.md                # Este arquivo
-```
-
-## 🚀 Como Usar
-
-### 1. Preparar os Arquivos
-- Exporte os dados da Web of Science como **"Plain Text"** ou **"Tab-delimited"**
-- Exporte os dados da Scopus como **CSV**
-- Coloque os arquivos na mesma pasta do script
-
-### 2. Executar o Script
-
-**Opção A - Duplo clique:**
-- Salve o código como `bibliofusion.py`
-- Dê duplo clique no arquivo
-
-**Opção B - Terminal:**
-```bash
-cd caminho/para/sua/pasta
+# Execute o BiblioFusion
 python bibliofusion.py
 ```
 
-### 3. Saída Esperada
+### 3. **Saída Imediata**
 ```
-🔧 Iniciando processo de mesclagem das bases...
+🚀 INICIANDO BIBLIOFUSION v1.0
 📥 Carregando bases de dados...
-✅ Web of Science: XXX registros
-✅ Scopus: XXX registros
-🔄 Combinando bases...
-✅ Duplicatas removidas: XX
-📊 Total antes da limpeza: XXX registros
-📅 Corrigindo formato das datas...
-✅ Registros com datas inválidas removidos: X
-📊 Total final após limpeza: XXX registros
-📅 Anos únicos encontrados: [2019, 2020, 2021, 2022, 2023, 2024]
-🎉 Arquivo salvo com sucesso: base_bibliometrica_apenas_ano.csv
+✅ Web of Science: 1.247 registros
+✅ Scopus: 892 registros
+🔄 Mesclando bases...
+🎯 Removendo duplicatas: 156 registros removidos
+📅 Corrigindo formatos de data...
+💾 Salvando: bibliofusion_output.csv
+🎉 PROCESSAMENTO CONCLUÍDO!
+📊 Estatísticas finais: 1.983 registros únicos
 ```
 
-## 📊 Arquivos Gerados
+## 📁 Estrutura do Projeto
 
-### Arquivo Final: `base_bibliometrica_apenas_ano.csv`
-- **Formato:** CSV compatível com VOSviewer
-- **Codificação:** UTF-8 com BOM
-- **Colunas principais:**
-  - `Title` - Título do artigo
-  - `Authors` - Autores
-  - `Year` - Ano de publicação (apenas ano inteiro)
-  - `Source title` - Nome da revista/fonte
-  - `DOI` - Identificador digital
-  - `Abstract` - Resumo
-  - `Cited by` - Citações
-  - `References` - Referências
-  - `Fonte` - Origem dos dados (Web of Science/Scopus)
+```
+bibliofusion/
+├── 📄 bibliofusion.py                 # Script principal
+├── 📁 inputs/                         # Pasta para arquivos de entrada
+│   ├── wos_data.txt                  # Exportação Web of Science
+│   └── scopus_data.csv               # Exportação Scopus
+├── 📁 outputs/                       # Pasta para resultados
+│   ├── bibliofusion_output.csv       # Base mesclada principal
+│   └── processing_report.txt         # Relatório detalhado
+├── 📁 docs/                         # Documentação
+│   ├── MANUAL.md                    # Manual completo
+│   └── TROUBLESHOOTING.md          # Solução de problemas
+└── 📄 requirements.txt              # Dependências
+```
 
-## 🔧 Funcionalidades do Script
+## 🔧 Configuração Detalhada
 
-### ✅ Processamento Automático
-- **Mesclagem** das bases Web of Science e Scopus
-- **Remoção de duplicatas** por DOI e título
-- **Correção de datas** - extrai apenas o ano (remove decimais)
-- **Padronização** de colunas para VOSviewer
+### Pré-requisitos
+- **Python 3.8+** - [Download aqui](https://www.python.org/downloads/)
+- **Pandas** - `pip install pandas`
+- **VOSviewer** - [Download oficial](https://www.vosviewer.com/)
 
-### ✅ Resolução de Problemas Comuns
-- **Datas decimais:** Converte `2024.6` → `2024`
-- **Encoding:** Usa UTF-8 com BOM para caracteres especiais
-- **Valores vazios:** Preenche campos missing
-- **Formato inconsistente:** Padroniza nomes de colunas
+### Preparação dos Arquivos de Entrada
 
-## 🎮 Usando no VOSviewer
+#### Web of Science
+1. Acesse Web of Science
+2. Selecione os artigos desejados
+3. Exporte como: **"Plain Text"** ou **"Tab-delimited"**
+4. Salve como: `wos_data.txt`
 
-### Passo a Passo:
-1. Abra o **VOSviewer**
+#### Scopus
+1. Acesse Scopus  
+2. Selecione os artigos
+3. Exporte como: **CSV**
+4. Salve como: `scopus_data.csv`
+
+### Execução Completa
+
+```bash
+# 1. Coloque os arquivos na pasta inputs/
+cp caminho/do/seu/wos_data.txt inputs/
+cp caminho/do/seu/scopus_data.csv inputs/
+
+# 2. Execute o BiblioFusion
+python bibliofusion.py
+
+# 3. Verifique os resultados
+ls outputs/
+```
+
+## 📊 Arquivos de Saída
+
+### `bibliofusion_output.csv`
+- Base principal mesclada e tratada
+- Formato otimizado para VOSviewer
+- Codificação: UTF-8 com BOM
+- Campos padronizados
+
+### `processing_report.txt`
+```
+RELATÓRIO BIBLIOFUSION
+=====================
+Data do processamento: 2024-12-15 14:30:25
+Total de registros: 1.983
+- Web of Science: 1.247 (62.9%)
+- Scopus: 892 (45.0%)
+Duplicatas removidas: 156
+Período temporal: 2016-2024
+Anos cobertos: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+Arquivo gerado: bibliofusion_output.csv
+Status: SUCESSO
+```
+
+## 🎮 Uso no VOSviewer
+
+### Passo a Passo Simplificado
+
+1. **Abra o VOSviewer**
 2. **File** → **Create** → **Create a map based on bibliographic data**
-3. Selecione **"Read data from reference manager files"**
-4. Escolha o arquivo `base_bibliometrica_apenas_ano.csv`
-5. No mapeamento de campos, certifique-se que:
-   - `Year` está mapeado para o campo de ano
-   - `Title` para título
-   - `Authors` para autores
+3. **Selecione:** "Read data from reference manager files"
+4. **Escolha:** `outputs/bibliofusion_output.csv`
+5. **Mapeamento automático:**
+   - `Title` → Title
+   - `Authors` → Authors  
+   - `Year` → Year
+   - `Source title` → Source
+   - `DOI` → DOI
 
-### ⚠️ Solução de Problemas no VOSviewer
-
-**Problema:** "Year field not recognized"
-**Solução:** Verifique se a coluna Year contém apenas números inteiros
-
-**Problema:** "Encoding error"
-**Solução:** O script já usa UTF-8 com BOM, que resolve a maioria dos problemas de acentuação
-
-**Problema:** "Duplicate records"
-**Solução:** O script já remove duplicatas automaticamente
-
-## 📈 Estatísticas Geradas
-
-O script fornece relatório completo:
-- Total de registros por fonte
-- Período temporal coberto
-- Duplicatas removidas
-- Registros com datas inválidas
-
-## 🔄 Personalização
-
-### Modificar Colunas
-Edite a lista `colunas_essenciais_vosviewer` no script para incluir/excluir colunas:
+### ⚡ Configuração Rápida VOSviewer
 
 ```python
-colunas_essenciais_vosviewer = [
-    'Title', 'Authors', 'Year', 'Source title', 'DOI', 
-    'Abstract', 'Cited by', 'References', 'Fonte'
-]
+# O BiblioFusion já prepara automaticamente:
+# ✅ Campos no formato correto
+# ✅ Datas como inteiros (2024, não 2024.6)
+# ✅ Encoding compatível
+# ✅ Estrutura otimizada
 ```
 
-### Alterar Período Temporal
-Modifique os limites no código:
+## 🔄 Fluxo de Trabalho Recomendado
+
+```mermaid
+graph LR
+    A[WoS] --> B[BiblioFusion]
+    C[Scopus] --> B
+    B --> D[Base Unificada]
+    D --> E[VOSviewer]
+    E --> F[Análise<br/>Bibliométrica]
+    F --> G[Publicação]
+```
+
+## ⚙️ Personalização Avançada
+
+### Modificar Campos de Saída
+
+Edite no script principal:
 ```python
-merged_df = merged_df[merged_df[coluna_ano_encontrada] >= 2000]  # Ano mínimo
-merged_df = merged_df[merged_df[coluna_ano_encontrada] <= 2024]  # Ano máximo
+CAMPOS_PERSONALIZADOS = {
+    'obrigatorios': ['Title', 'Authors', 'Year', 'Source title', 'DOI'],
+    'opcionais': ['Abstract', 'Cited by', 'References', 'Keywords'],
+    'metadados': ['Fonte', 'Processing_Date']
+}
 ```
 
-## 🆘 Troubleshooting
+### Filtros Temporais
 
-### Erros Comuns e Soluções
+```python
+# No script, modifique:
+ANO_MINIMO = 2010
+ANO_MAXIMO = 2024
+```
 
-**"Arquivo não encontrado"**
-- Verifique se os arquivos estão na mesma pasta do script
-- Confirme os nomes: `wos_data.txt` e `scopus_data.csv`
+## 🐛 Solução de Problemas
 
-**"python não é reconhecido"**
-- Reinstale Python marcando "Add Python to PATH"
-- Ou use `python3` no lugar de `python`
+### Problemas Comuns e Soluções
 
-**"Módulo pandas não encontrado"**
-- Execute: `pip install pandas`
+| Problema | Sintoma | Solução |
+|----------|---------|---------|
+| **Arquivos não encontrados** | Erro de file not found | Verifique pasta `inputs/` |
+| **Encoding errors** | Caracteres especiais quebrados | Use UTF-8 no export |
+| **Datas com decimais** | 2024.6 no VOSviewer | Execute BiblioFusion novamente |
+| **Duplicatas persistentes** | Registros repetidos | Verifique campos DOI/Title |
 
-**Datas ainda com decimais no VOSviewer**
-- Execute o script novamente - ele foi atualizado para resolver este problema
+### Logs de Depuração
 
-## 📞 Suporte
+```bash
+# Execute em modo verbose
+python bibliofusion.py --verbose
 
-### Para Dúvidas:
-1. Verifique se todos os pré-requisitos estão instalados
-2. Confirme que os arquivos de entrada estão no formato correto
-3. Execute o script novamente - muitos problemas são resolvidos com nova execução
+# Ou para debug detalhado
+python bibliofusion.py --debug
+```
 
-### Logs de Execução:
-O script fornece feedback detalhado durante o processamento. Se encontrar erros, compartilhe a mensagem completa do terminal.
+## 📈 Exemplos de Uso
+
+### Caso 1: Revisão Sistemática
+```bash
+# Para uma revisão sobre "machine learning"
+python bibliofusion.py
+# Output: 2.341 artigos únicos, 2010-2024
+```
+
+### Caso 2: Análise Bibliométrica
+```bash
+# Para análise de tendências
+python bibliofusion.py --min-year 2015 --max-year 2024
+# Output: Foco em publicações recentes
+```
+
+## 🤝 Contribuindo
+
+### Reportando Issues
+1. Verifique se o problema já foi reportado
+2. Inclua mensagens de erro completas
+3. Anexe exemplos dos arquivos de entrada
+
+### Sugerindo Melhorias
+- Novos formatos de exportação
+- Processamento em lote
+- Interface gráfica
 
 ## 📄 Licença
 
-Este script é disponibilizado para uso acadêmico e de pesquisa.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
----
+## 🏆 Citação
 
-**✍️ Desenvolvido para** facilitar análises bibliométricas e revisões sistemáticas da literatura.
+Se usar o BiblioFusion em sua pesquisa, cite:
 
-**🕐 Última atualização:** Dezembro 2024
-
-**✅ Status:** Testado e validado com bases reais Web of Science e Scopus
+```bibtex
+@software{bibliofusion2024,
+  title = {BiblioFusion: Fusão Bibliográfica Inteligente},
+  author = {Seu Nome},
+  year = {2024},
+  url = {https://github.com/seu-usuario/bibliofusion}
+}
+```
