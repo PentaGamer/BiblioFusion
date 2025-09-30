@@ -33,7 +33,7 @@
 ### 1. **Instalação Rápida**
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/bibliofusion.git
+git clone https://github.com/PentaGamer/BiblioFusion.git
 cd bibliofusion
 
 # Instale as dependências
@@ -259,3 +259,4 @@ Se usar o BiblioFusion em sua pesquisa, cite:
 }
 
 ```
+
