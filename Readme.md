@@ -1,6 +1,6 @@
 # 🚀 **BiblioFusion** - Fusão Bibliográfica Inteligente
 
-![BiblioFusion](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![BiblioFusion](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 
 ## 📖 Sobre o Projeto
 
@@ -257,4 +257,5 @@ Se usar o BiblioFusion em sua pesquisa, cite:
   year = {2024},
   url = {https://github.com/seu-usuario/bibliofusion}
 }
+
 ```
