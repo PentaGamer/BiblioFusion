@@ -37,7 +37,7 @@ git clone https://github.com/seu-usuario/bibliofusion.git
 cd bibliofusion
 
 # Instale as dependências
-pip install pandas numpy
+pip install pandas
 ```
 
 ### 2. **Uso Básico**
